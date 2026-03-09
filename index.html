@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memo’Erase - Accueil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo-link"><img src="images/Img logo.png" alt="Memo'Erase" class="site-logo"></a><h2>Memo'Erase</h2>
+    <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="overlay-menu" id="overlay-menu" aria-hidden="true"></div>
+    <nav class="nav-menu" id="nav-menu" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Nos services</a>
+        <a href="confiance.html">À propos de nous</a>
+        <a href="partenaire.html">Devenir partenaire</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Être accompagné(e)</a>
+        <a href="connexion.html">Espace famille</a>
+        <a href="inscription.html">Inscription</a>
+        <a href="#" id="logout-link" style="display:none;">Déconnexion</a>
+    </nav>
+</header>
+
+<section class="hero hero-with-image">
+    <div class="hero-content">
+        <h2>Qui s’occupe de votre empreinte numérique ?</h2>
+        <p class="hero-tagline">En 2024, un défunt laisse en moyenne <strong>130 comptes numériques</strong> actifs. Nous identifions et supprimons les comptes en ligne (réseaux sociaux, cloud, abonnements) pour alléger la charge des proches et respecter le droit à l’oubli.</p>
+        <div class="cta-group">
+            <a href="services.html" class="btn">Découvrir le service</a>
+            <a href="contact.html" class="btn secondary">Être accompagné(e)</a>
+        </div>
+    </div>
+    <div class="hero-image-wrap">
+        <img src="images/Img 1.png" alt="Accompagnement serein pour la succession numérique" class="hero-image">
+    </div>
+</section>
+
+<section class="section section-alt">
+    <h2>Le problème</h2>
+    <p class="stat-lead">L’usurpation d’identité post-mortem a augmenté ces dernières années. <strong>Nous sommes la solution.</strong></p>
+    <p>Memo’Erase agit comme un exécuteur testamentaire digital : nous gérons l’intégralité du patrimoine numérique d’un défunt avec éthique, sécurité et discrétion.</p>
+</section>
+
+<section class="section quote-section">
+    <blockquote class="expert-quote">
+        « La gestion de l’héritage numérique est devenue le nouveau défi des successions au 21<sup>e</sup> siècle. »
+        <cite>— Expert en droit numérique</cite>
+    </blockquote>
+</section>
+
+<section class="section">
+    <h2>Le service</h2>
+    <p>Identification des comptes, suppression ou mémorialisation selon les volontés, accompagnement des familles et des partenaires (notaires, pompes funèbres, assureurs).</p>
+    <div class="cta-group" style="margin-top:1rem;">
+        <a href="services.html" class="btn">Voir nos services et tarifs</a>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Pourquoi nous ?</h2>
+    <ul>
+        <li>Tranquillité d’esprit pour les familles endeuillées.</li>
+        <li>Prévention de l’usurpation d’identité et des prélèvements automatiques oubliés.</li>
+        <li>Démarche éco-responsable : réduction des données inutiles stockées sur les serveurs.</li>
+        <li>Éthique, sécurité et confidentialité au cœur de notre démarche.</li>
+    </ul>
+</section>
+
+<section class="section partners-preview">
+    <h2>Ils nous font confiance</h2>
+    <p class="partners-intro">Partenaires du secteur funéraire, de l’assurance et du notariat.</p>
+    <div class="partner-logos">
+        <div class="partner-logo-item"><img src="images/logo_pfg.jpg" alt="Partenaire 1"></div>
+        <div class="partner-logo-item"><img src="images/logo_allianz.jpg" alt="Partenaire 2"></div>
+        <div class="partner-logo-item"><img src="images/logo_bnp.jpg" alt="Partenaire 3"></div>
+    </div>
+</section>
+
+<section class="section avis-section">
+    <h2>Avis</h2>
+    <div class="grid avis-grid">
+        <div class="card">
+            <p class="avis-text">« Un accompagnement précieux dans un moment difficile. Tout a été clair et sécurisé. »</p>
+            <p class="avis-author">— Famille M. + + + +</p>
+        </div>
+        <div class="card">
+            <p class="avis-text">« En tant que notaire, Memo’Erase nous permet d’offrir une vraie valeur ajoutée à nos clients. »</p>
+            <p class="avis-author">— Cabinet N., Rouen</p>
+        </div>
+    </div>
+</section>
+
+<section class="section cta-section">
+    <h2>Prêt à agir ?</h2>
+    <p>Que vous soyez un proche, un professionnel ou que vous souhaitiez anticiper pour vous-même.</p>
+    <div class="cta-group">
+        <a href="contact.html" class="btn">Être accompagné(e)</a>
+        <a href="partenaire.html" class="btn secondary">Devenir partenaire</a>
+        <a href="inscription.html" class="btn secondary">Créer un compte</a>
+    </div>
+</section>
+
+<footer>
+    <p>Contact : <a href="mailto:contact@memorease.fr">memoerase.business@gmail.com</a> | Rouen, France</p>
+    <p class="footer-social">Suivez-nous : <a href="#" aria-label="LinkedIn">LinkedIn</a> · <a href="#" aria-label="Facebook">Facebook</a> · <a href="#" aria-label="Instagram">Instagram</a></p>
+    <p>&copy; <span id="year"></span> Memo’Erase. Tous droits réservés.</p>
+</footer>
+
+<script>
+    (function() {
+        document.getElementById('year').textContent = new Date().getFullYear();
+        var btn = document.querySelector('.hamburger');
+        var nav = document.getElementById('nav-menu');
+        var overlay = document.getElementById('overlay-menu');
+        function openMenu() {
+            btn.setAttribute('aria-expanded', 'true');
+            nav.classList.add('is-open');
+            overlay.classList.add('is-visible');
+            overlay.setAttribute('aria-hidden', 'false');
+        }
+        function closeMenu() {
+            btn.setAttribute('aria-expanded', 'false');
+            nav.classList.remove('is-open');
+            overlay.classList.remove('is-visible');
+            overlay.setAttribute('aria-hidden', 'true');
+        }
+        btn.addEventListener('click', function() {
+            if (nav.classList.contains('is-open')) closeMenu();
+            else openMenu();
+        });
+        overlay.addEventListener('click', closeMenu);
+        var logout = document.getElementById('logout-link');
+        if (logout && sessionStorage.getItem('memorease_logged_in')) {
+            logout.style.display = '';
+            logout.addEventListener('click', function(e) {
+                e.preventDefault();
+                sessionStorage.removeItem('memorease_logged_in');
+                window.location.href = 'connexion.html';
+            });
+        }
+    })();
+</script>
+</body>
+</html>

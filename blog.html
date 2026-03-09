@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memo'Erase - Blog, mentions légales et confidentialité</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo-link"><img src="images/Img logo.png" alt="Memo'Erase" class="site-logo"></a><h2>Memo'Erase</h2>
+    <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="overlay-menu" id="overlay-menu" aria-hidden="true"></div>
+    <nav class="nav-menu" id="nav-menu" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Nos services</a>
+        <a href="confiance.html">À propos de nous</a>
+        <a href="partenaire.html">Devenir partenaire</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Être accompagné(e)</a>
+        <a href="connexion.html">Espace famille</a>
+        <a href="inscription.html">Inscription</a>
+    </nav>
+</header>
+
+<main class="section">
+    <h2>Blog – Informations légales</h2>
+
+    <article class="legal-block">
+        <h3>Mentions légales</h3>
+        <p><strong>Éditeur du site :</strong> Memo'Erase</p>
+        <p><strong>Siège :</strong> Rouen, France</p>
+        <p><strong>Contact :</strong> <a href="mailto:contact@memorease.fr">memoerase.business@gmail.com</a></p>
+        <p>Le site Memo'Erase a pour objet de présenter les services de gestion de l'héritage numérique (identification et suppression des comptes en ligne des défunts, testament digital, accompagnement des familles et des partenaires).</p>
+    </article>
+
+    <article class="legal-block">
+        <h3>Politique de confidentialité</h3>
+        <p>Memo'Erase s'engage à protéger la vie privée des utilisateurs de ce site et des personnes concernées par les dossiers traités.</p>
+        <h4>Données collectées</h4>
+        <p>Les données personnelles collectées (nom, prénom, adresse e-mail, informations relatives aux dossiers) le sont uniquement pour la fourniture de nos services, la gestion de la relation client et le respect de nos obligations légales.</p>
+        <h4>Finalité et base légale</h4>
+        <p>Le traitement de vos données repose sur l'exécution d'un contrat, votre consentement ou notre intérêt légitime. Nous ne vendons pas vos données à des tiers.</p>
+        <h4>Vos droits</h4>
+        <p>Conformément au Règlement général sur la protection des données (RGPD), vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation du traitement et de portabilité. Vous pouvez exercer ces droits en nous contactant à <a href="mailto:contact@memorease.fr">memoerase.business@gmail.com</a>.</p>
+        <h4>Conservation</h4>
+        <p>Les données sont conservées pendant la durée nécessaire à l'exécution des services et aux obligations légales, puis supprimées ou anonymisées.</p>
+    </article>
+</main>
+
+<footer>
+    <p>Contact : <a href="mailto:contact@memorease.fr">memoerase.business@gmail.com</a> | Rouen, France</p>
+    <p class="footer-social">Suivez-nous : <a href="#" aria-label="LinkedIn">LinkedIn</a> · <a href="#" aria-label="Facebook">Facebook</a> · <a href="#" aria-label="Instagram">Instagram</a></p>
+    <p>&copy; <span id="year"></span> Memo'Erase. Tous droits réservés.</p>
+</footer>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    (function() {
+        var btn = document.querySelector('.hamburger');
+        var nav = document.getElementById('nav-menu');
+        var overlay = document.getElementById('overlay-menu');
+        function openMenu() {
+            btn.setAttribute('aria-expanded', 'true');
+            nav.classList.add('is-open');
+            overlay.classList.add('is-visible');
+            overlay.setAttribute('aria-hidden', 'false');
+        }
+        function closeMenu() {
+            btn.setAttribute('aria-expanded', 'false');
+            nav.classList.remove('is-open');
+            overlay.classList.remove('is-visible');
+            overlay.setAttribute('aria-hidden', 'true');
+        }
+        btn.addEventListener('click', function() {
+            if (nav.classList.contains('is-open')) closeMenu();
+            else openMenu();
+        });
+        overlay.addEventListener('click', closeMenu);
+    })();
+</script>
+</body>
+</html>

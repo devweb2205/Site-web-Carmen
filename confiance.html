@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memo’Erase - Confidentialité & confiance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo-link"><img src="images/Img logo.png" alt="Memo'Erase" class="site-logo"></a><h2>Memo'Erase</h2>
+    <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="overlay-menu" id="overlay-menu" aria-hidden="true"></div>
+    <nav class="nav-menu" id="nav-menu" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Nos services</a>
+        <a href="confiance.html">À propos de nous</a>
+        <a href="partenaire.html">Devenir partenaire</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Être accompagné(e)</a>
+        <a href="connexion.html">Espace famille</a>
+        <a href="inscription.html">Inscription</a>
+        <a href="#" id="logout-link" style="display:none;">Déconnexion</a>
+    </nav>
+</header>
+
+<main class="section">
+    <h2>À propos de nous</h2>
+    <p>Notre <strong>démarche</strong> : accompagner les familles et les professionnels dans la gestion de l’héritage numérique avec <strong>écologie</strong> (réduction des données inutiles), <strong>éthique</strong> (respect de la mémoire et des volontés), et <strong>sécurité</strong> (données protégées, procédures officielles).</p>
+    <div class="section-with-image team-block">
+        <img src="images/Img 3.png" alt="Notre équipe Memo'Erase" class="section-img team-photo">
+        <div>
+            <h3>Notre équipe</h3>
+            <p>Une équipe dédiée à la succession numérique, à votre écoute pour chaque dossier.</p>
+        </div>
+    </div>
+    <h3>Objectifs</h3>
+    <ul>
+        <li>Écologie : réduire l’empreinte des données stockées inutilement.</li>
+        <li>Éthique : discrétion, empathie, respect du droit à l’oubli.</li>
+        <li>Sécurité : traitement conforme RGPD et procédures des plateformes.</li>
+    </ul>
+    <h3>Confidentialité et respect de la mémoire</h3>
+    <div class="grid">
+        <div class="card">
+            <h3>Protection des données</h3>
+            <p>Les informations transmises sont traitées dans le respect des réglementations sur la vie privée et la protection des données. </p>
+            <ul>
+                <li>Accès limité aux données strictement nécessaires à la suppression. </li>
+                <li>Stockage sécurisé sur des serveurs protégés. </li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Procédure éthique</h3>
+            <p>Chaque dossier est traité avec empathie et discrétion, pour protéger à la fois la mémoire du défunt et les proches. </p>
+            <ul>
+                <li>Accompagnement humain à chaque étape.</li>
+                <li>Possibilité d’opter pour un mode « mémorial » pour certaines données. </li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Démarche éco‑responsable</h3>
+            <p>En supprimant les données inutiles, Memo’Erase contribue à réduire l’empreinte carbone liée au stockage massif sur les serveurs. </p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>Contact : <a href="mailto:contact@memorease.fr">memoerase.business@gmail.com</a> | Rouen, France</p>
+    <p class="footer-social">Suivez-nous : <a href="#" aria-label="LinkedIn">LinkedIn</a> · <a href="#" aria-label="Facebook">Facebook</a> · <a href="#" aria-label="Instagram">Instagram</a></p>
+    <p>&copy; <span id="year"></span> Memo’Erase. Tous droits réservés.</p>
+</footer>
+
+<script>
+    (function() {
+        if (!sessionStorage.getItem('memorease_logged_in')) {
+            window.location.href = 'connexion.html';
+            return;
+        }
+        document.getElementById('year').textContent = new Date().getFullYear();
+        var btn = document.querySelector('.hamburger');
+        var nav = document.getElementById('nav-menu');
+        var overlay = document.getElementById('overlay-menu');
+        function openMenu() {
+            btn.setAttribute('aria-expanded', 'true');
+            nav.classList.add('is-open');
+            overlay.classList.add('is-visible');
+            overlay.setAttribute('aria-hidden', 'false');
+        }
+        function closeMenu() {
+            btn.setAttribute('aria-expanded', 'false');
+            nav.classList.remove('is-open');
+            overlay.classList.remove('is-visible');
+            overlay.setAttribute('aria-hidden', 'true');
+        }
+        btn.addEventListener('click', function() {
+            if (nav.classList.contains('is-open')) closeMenu();
+            else openMenu();
+        });
+        overlay.addEventListener('click', closeMenu);
+        var logout = document.getElementById('logout-link');
+        if (logout) {
+            logout.style.display = '';
+            logout.addEventListener('click', function(e) {
+                e.preventDefault();
+                sessionStorage.removeItem('memorease_logged_in');
+                window.location.href = 'connexion.html';
+            });
+        }
+    })();
+</script>
+</body>
+</html>
+

@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memo’Erase - Inscription</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo-link"><img src="images/Img logo.png" alt="Memo'Erase" class="site-logo"></a><h2>Memo'Erase</h2>
+    <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="overlay-menu" id="overlay-menu" aria-hidden="true"></div>
+    <nav class="nav-menu" id="nav-menu" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Nos services</a>
+        <a href="confiance.html">À propos de nous</a>
+        <a href="partenaire.html">Devenir partenaire</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Être accompagné(e)</a>
+        <a href="connexion.html">Espace famille</a>
+        <a href="inscription.html">Inscription</a>
+    </nav>
+</header>
+
+<main class="section">
+    <div class="auth-page-header">
+        <h2>Créer un compte Memo’Erase</h2>
+        <p>Créez votre espace sécurisé pour gérer un dossier de succession numérique ou un partenariat.</p>
+    </div>
+
+    <div class="auth-wrapper">
+        <form class="auth-form" method="post" action="#" id="form-inscription">
+            <div>
+                <label for="role">Je suis</label>
+                <select id="role" required>
+                    <option value="">Choisissez...</option>
+                    <option value="proche">Un proche du défunt</option>
+                    <option value="notaire">Notaire</option>
+                    <option value="assureur">Assureur</option>
+                    <option value="pompes">Pompes funèbres</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="nom">Nom et prénom</label>
+                <input type="text" id="nom" required>
+            </div>
+
+            <div>
+                <label for="email">Adresse e‑mail</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div>
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" required>
+                <p class="auth-info">Au moins 8 caractères, avec lettres et chiffres.</p>
+            </div>
+
+            <div>
+                <label for="password2">Confirmer le mot de passe</label>
+                <input type="password" id="password2" required>
+            </div>
+
+            <div>
+                <label>
+                    <input type="checkbox" required>
+                    J’accepte les conditions d’utilisation et la politique de confidentialité.
+                </label>
+            </div>
+
+            <button type="submit" class="btn">Créer mon compte</button>
+
+            <div class="auth-links">
+                <p>Vous avez déjà un compte ? <a href="connexion.html">Se connecter</a></p>
+            </div>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <p>Contact : <a href="mailto:contact@memorease.fr">memoerase.business@gmail.com</a> | Rouen, France</p>
+    <p class="footer-social">Suivez-nous : <a href="#" aria-label="LinkedIn">LinkedIn</a> · <a href="#" aria-label="Facebook">Facebook</a> · <a href="#" aria-label="Instagram">Instagram</a></p>
+    <p>&copy; <span id="year"></span> Memo’Erase. Tous droits réservés.</p>
+</footer>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    (function() {
+        var btn = document.querySelector('.hamburger');
+        var nav = document.getElementById('nav-menu');
+        var overlay = document.getElementById('overlay-menu');
+        function openMenu() {
+            btn.setAttribute('aria-expanded', 'true');
+            nav.classList.add('is-open');
+            overlay.classList.add('is-visible');
+            overlay.setAttribute('aria-hidden', 'false');
+        }
+        function closeMenu() {
+            btn.setAttribute('aria-expanded', 'false');
+            nav.classList.remove('is-open');
+            overlay.classList.remove('is-visible');
+            overlay.setAttribute('aria-hidden', 'true');
+        }
+        btn.addEventListener('click', function() {
+            if (nav.classList.contains('is-open')) closeMenu();
+            else openMenu();
+        });
+        overlay.addEventListener('click', closeMenu);
+    })();
+    document.getElementById('form-inscription').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var p1 = document.getElementById('password').value;
+        var p2 = document.getElementById('password2').value;
+        if (p1 !== p2) {
+            alert('Les deux mots de passe ne correspondent pas.');
+            return;
+        }
+        alert('Page de démonstration. En production, le compte serait créé côté serveur.');
+    });
+</script>
+</body>
+</html>
+
